@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert Website</title>
+	  <link rel="icon" type="image/x-icon" href= "/images/dessert.png">
+
+    <!-- Bootstrap CSS for layout and responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for social media icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+      
+    <!-- Slick Carousel JS  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style>
+      @media (min-width: 992px) {
+          .navbar-expand-lg .navbar-nav {
+              flex-direction: row;
+              width: 410px;
+          }
+      }
+      .dessert-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      .dessert-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .dessert-card .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #desserts {
+        margin-top: 0;
+      }
+
+      .product-slider {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+      }
+
+      .product-card {
+        width: 250px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .product-card h3 {
+        font-size: 1.2rem;
+        margin-top: 15px;
+        color: #333;
+      }
+
+      .product-card p {
+        font-size: 0.9rem;
+        color: #777;
+        margin-bottom: 20px;
+      }
+
+      .product-card button {
+        margin-top: 10px;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Slick Slider Adjustments */
+      .slick-prev, .slick-next {
+        z-index: 1;
+      }
+
+      .slick-prev {
+        left: -25px;
+      }
+
+      .slick-next {
+        right: -25px;
+      }
+    </style>
+</head>
+
+
+  <header class="header bg-#eed6d6 p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo -->
+      <a href="#" class="logo text-decoration-none text-dark fs-3 d-flex align-items-center fw-bold" style="font-family: 'Arial', sans-serif;">
+        <i class="bi bi-cake2 me-2"></i> SweetScape</a>
+  
+      <!-- Login and Sign Up Buttons -->
+      <div class="auth-buttons d-flex" style="margin-left: 20px;">
+        <a href="login.html">
+          <button class="btn btn-secondary" style="margin-right: 12px; padding: 8px 12px; font-size: 14px; background-color: #D64161; color: white; border: none; border-radius: 5px;">
+            Login
+          </button>
+        </a>
+        <a href="signup.html">
+          <button class="btn btn-secondary" style="padding: 8px 12px; font-size: 14px; background-color: #D64161; color: white; border: none; border-radius: 5px;">
+            Sign Up
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navbar Section (Tabs for Home, Explore Us, About Us, Contact Us) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-#eed6d6 mt-2">
+      <div class="container">
+        <ul class="navbar-nav mx-auto"> <!-- Center align the tabs -->
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#explore">Explore Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="home bg-dark text-white text-center p-5">
+    <div class="container">
+      <h2>A meal that ends with dessert is a celebration in itself! Pick a treat from our range of desserts including cakes,pastries,cookies,ice-creams.</h2>
+      <p>Indulge in the finest and most decadent desserts by sweetscape</p>
+      <a href="updateddvideo.mp4" class="btn btn-danger">Watch our Video</a>
+    </div>
+  </section>
+
+  <section id="explore" class="dessert-explore py-5">
+    <div class="container text-center">
+      <h2>Explore Our Sweet Treats</h2>
+      <p class="lead">Browse through our collection of irresistible desserts and indulge in your favorites!</p>
+      <div class="row">
+        <!-- Cake Section -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/cakes.png" alt="Cakes" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Cakes</h3>
+              <p class="card-text">Delight in our moist and decadent cakes, perfect for any occasion. Rich, chocolatey goodness or light and fluffy - there's a cake for every taste!</p>
+              <button class="btn btn-primary" onclick="orderDessert('Cakes')">Explore Cakes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cookies Section -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/cookies.png" alt="Cookies" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Cookies</h3>
+              <p class="card-text">Freshly baked cookies with the perfect balance of chewy and crispy! Choose from classic chocolate chip, oatmeal, and more!</p>
+              <button class="btn btn-primary" onclick="orderDessert('Cookies')">Explore Cookies</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastries Section -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/pastries.png" alt="Pastries" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Pastries</h3>
+              <p class="card-text">Savor our delicate pastries, from buttery croissants to indulgent éclairs. Perfect for breakfast, tea, or a delightful snack.</p>
+              <button class="btn btn-primary" onclick="orderDessert('Pastries')">Explore Pastries</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ice Cream Section -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/icecream.png" alt="Ice Cream" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Ice Cream</h3>
+              <p class="card-text">Cool off with our creamy ice cream, available in an array of classic and unique flavors. Enjoy it on its own or with your favorite toppings!</p>
+              <button class="btn btn-primary" onclick="orderDessert('Ice Cream')">Explore Ice Cream</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donuts Section -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/donuts.png" alt="Donuts" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Donuts</h3>
+              <p class="card-text">Treat yourself to a box of fresh, warm donuts, glazed and topped with your favorite flavors. Perfect for any time of the day!</p>
+              <button class="btn btn-primary" onclick="orderDessert('Donuts')">Explore Donuts</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cupcakes Section (New) -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/cupcakes.png" alt="Cupcakes" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Cupcakes</h3>
+              <p class="card-text">Satisfy your sweet tooth with our delicious, frosted cupcakes. Choose from a variety of flavors, from classic vanilla to rich chocolate!</p>
+              <button class="btn btn-primary" onclick="orderDessert('Cupcakes')">Explore Cupcakes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brownies Section (New) -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/brownies.png" alt="Brownies" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Brownies</h3>
+              <p class="card-text">Dive into our fudgy and chewy brownies, made with premium cocoa and topped with nuts or chocolate chips. Perfect for chocolate lovers!</p>
+              <button class="btn btn-primary" onclick="orderDessert('Brownies')">Explore Brownies</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pies Section (New) -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="card dessert-card">
+            <img src="images/pies.png" alt="Pies" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Pies</h3>
+              <p class="card-text">Indulge in our delicious pies, from classic apple to pecan and pumpkin. Warm and comforting, perfect for any dessert table!<br><br></p>
+              <button class="btn btn-primary" onclick="orderDessert('Pies')">Explore Pies</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="dessert-search" class="py-5 text-center" style="margin-bottom: 0;">
+    <div class="container">
+      <h2>Search for Dessert Recipes & Blogs</h2>
+      <p class="lead">Looking for something specific? Enter your search term below and explore!!!</p>
+          
+      <!-- Search Input Field and Button -->
+      <div class="input-group mb-3">
+        <input type="text" id="searchQuery" class="form-control" placeholder="Enter dessert name or recipe..." aria-label="Search for dessert" aria-describedby="search-button">
+        <div class="input-group-append">
+          <button class="btn btn-primary" id="search-button" onclick="searchWikipedia()">Search on Wikipedia</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="desserts" class="desserts py-5">
+    <div class="container text-center">
+      <h2>Special Offers!!!</h2>
+      <!-- Slick Carousel Container -->
+      <div class="product-slider">
+        <!-- Individual Product Card 1 -->
+        <div class="product-card">
+          <img src="images/red velvet cake.png" alt="velvet cake" class="product-img">
+          <h3>Red Velvet Cake</h3>
+          <p>Delight in the smooth layers of this rich and moist red velvet cake with a cream cheese frosting.</p>
+          <button class="btn btn-primary" onclick="orderDessert('Red Velvet Cake')">Order Now</button>
+        </div>
+        
+        <!-- Individual Product Card 2 -->
+        <div class="product-card">
+          <img src="images/classiccheesecake.png" alt="classiccheesecake" class="product-img">
+          <h3>Classic Cheesecake</h3>
+          <p>A rich, creamy cheesecake with a buttery graham cracker crust, perfect for any occasion.</p>
+          <button class="btn btn-primary" onclick="orderDessert('Classic Cheesecake')">Order Now</button>
+        </div>
+        
+        <!-- Individual Product Card 3 -->
+        <div class="product-card">
+          <img src="images/mint chocolate chip icecream.png" alt="mint choco icecream" class="product-img">
+          <h3>Choco Chip Ice Cream</h3>
+          <p>A refreshing mint-flavored ice cream with rich chocolate chunks throughout.</p>
+          <button class="btn btn-primary" onclick="orderDessert('Mint Chocolate Chip Ice Cream')">Order Now</button>
+        </div>
+        
+        <!-- Individual Product Card 4 -->
+        <div class="product-card">
+          <img src="images/citrus fruit tart.png" alt="fruit tart" class="product-img">
+          <h3>Citrus Fruit Tart</h3>
+          <p>A zesty citrus tart with a buttery, crispy crust topped with fresh seasonal fruits.</p>
+          <button class="btn btn-primary" onclick="orderDessert('Citrus Fruit Tart')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-us p-5 bg-#eed6d6">
+    <div class="container text-center">
+        <h2 class="about-heading">About SweetScape</h2>
+        <p class="about-paragraph">
+            At SweetScape, we are passionate about creating irresistible desserts that bring joy to every occasion. 
+            From rich chocolate cakes to creamy cheesecakes, our desserts are made from the finest ingredients to deliver 
+            an unforgettable taste experience.
+        </p>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+<section id="contact" class="contact p-5 bg-lightpink">
+  <div class="container text-center">
+    <h2 class="contact-heading">Contact Us</h2>
+    <p class="contact-subheading">We'd love to hear from you! Share your thoughts, questions, or suggestions.</p>
+      <form id="contactForm">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" id="username" class="form-control mb-3" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" id="useremail" class="form-control mb-3" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" id="subject" class="form-control mb-3" placeholder="Subject" required>
+          </div>
+          <div class="col-md-6">
+            <input type="number" id="mobilenumber" class="form-control mb-3" placeholder="Your Number" required>
+          </div>
+        </div>
+        <textarea id="message" class="form-control mb-3" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-custom">Send Message</button>
+      </form>
+
+      
+  
+      <!-- Feedback Section -->
+      <div class="feedback mt-4">
+        <h3>Thank You for Visiting SweetScape!</h3>
+        <p>Your feedback is important to us. We look forward to delighting you again with our sweet treats. Come back soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer p-4 bg-dark text-white">
+    <div class="container text-center">
+      <!-- Visit Our Stores -->
+      <div class="store-info mb-3">
+        <h5>Visit Our Stores</h5>
+        <p>Mumbai | Navi Mumbai | Thane | Delhi | Gurgaon | Bengaluru | Pune | Chennai | Nashik | Nagpur | Indore </p>
+      </div>
+      <!-- Social media icons -->
+      <div class="social-icons mb-3">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon mx-3">
+          <i class="fab fa-facebook-f"></i>  <!-- Facebook Icon -->
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon mx-3">
+          <i class="fab fa-instagram"></i>  <!-- Instagram Icon -->
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="social-icon mx-3">
+          <i class="fab fa-youtube"></i>  <!-- YouTube Icon -->
+        </a>
+        <a href="https://www.pinterest.com" target="_blank" class="social-icon mx-3">
+          <i class="fab fa-pinterest"></i>  <!-- Pinterest Icon -->
+        </a>
+      </div>
+  
+      <!-- Footer copyright -->
+      <div class="container text-center">
+        <p>&copy; 2024 SweetScape. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+ <script>
+  function orderDessert(dessertType) {
+    alert(`You are exploring ${dessertType}!`);
+  }
+
+  function searchWikipedia() {
+    var query = document.getElementById('searchQuery').value;
+    if (query) {
+      var url = 'https://en.wikipedia.org/wiki/Special:Search?search=' + encodeURIComponent(query + ' dessert recipes');
+      window.open(url, '_blank');
+    } else {
+      alert('Please enter a search term');
+    }
+  }
+
+  $(document).ready(function(){
+    $('.product-slider').slick({
+      infinite: true,
+      slidesToShow: 3, // Show 3 cards at a time
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000, // Auto-slide every 2 seconds
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2, // Show 2 cards on medium screens
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1, // Show 1 card on small screens
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+
+  function orderDessert(dessertName) {
+    alert(`You have ordered: ${dessertName}`);
+    // Add custom logic to handle ordering (e.g., add to cart, proceed to checkout, etc.)
+  }
+ </script> 
+</body>
+</html>
